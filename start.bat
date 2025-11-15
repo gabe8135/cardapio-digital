@@ -1,0 +1,6 @@
+@echo off
+echo Ativando Node.js 20...
+nvm use 20
+echo.
+echo Iniciando Cardapio Digital...
+npm run dev

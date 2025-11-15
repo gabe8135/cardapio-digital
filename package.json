@@ -6,17 +6,21 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "qr": "node scripts/generate-qr.js",
+    "customize": "echo 'Edite src/config/menu.js para personalizar seu cardápio'",
+    "deploy": "npm run build && echo 'Pronto para deploy! Use Vercel, Netlify ou sua hospedagem'"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.76.1",
+    "next": "16.0.0",
     "react": "19.2.0",
-    "react-dom": "19.2.0",
-    "next": "16.0.0"
+    "react-dom": "19.2.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
     "eslint": "^9",
-    "eslint-config-next": "16.0.0"
+    "eslint-config-next": "16.0.0",
+    "tailwindcss": "^4"
   }
 }
