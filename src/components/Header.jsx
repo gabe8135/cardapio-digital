@@ -17,7 +17,7 @@ export default function Header({ restaurant }) {
                   {restaurant.name.charAt(0)}
                 </span>
               </div>
-            )}
+            )}   
             <div>
               <h1 className="text-2xl font-bold text-gray-800">{restaurant.name}</h1>
               <p className="text-gray-600 text-sm">{restaurant.description}</p>
