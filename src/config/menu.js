@@ -6,6 +6,7 @@ export const menuConfig = {
     logo: "/images/logo.png", // Coloque sua logo na pasta public
     description: "Cardápio digital com os melhores pratos da casa",
     phone: "(11) 99999-9999",
+    whatsapp: "5511999999999",
     address: "Rua Exemplo, 123 - Centro",
   },
 
@@ -161,3 +162,17 @@ export const menuConfig = {
     },
   ],
 };
+
+const categoryDetails = {
+  entradas: { prepTime: '10–15 min', serves: 'Serve 1–2 pessoas', tags: ['Para compartilhar'] },
+  'pratos-principais': { prepTime: '20–30 min', serves: 'Serve 1 pessoa', tags: ['Feito na hora'] },
+  bebidas: { prepTime: '5 min', serves: '1 unidade', tags: ['Gelado'] },
+  sobremesas: { prepTime: '8–12 min', serves: 'Serve 1 pessoa', tags: ['Doce da casa'] },
+}
+
+menuConfig.items = menuConfig.items.map((item) => ({
+  ...categoryDetails[item.category],
+  ...item,
+  tags: item.popular ? ['Mais pedido', ...categoryDetails[item.category].tags] : categoryDetails[item.category].tags,
+  allergens: item.category === 'bebidas' ? null : 'Consulte nossa equipe em caso de restrições alimentares.',
+}))
